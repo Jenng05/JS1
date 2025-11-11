@@ -23,7 +23,7 @@
 
     <!-- JS -->
     <script src="src/js/main.js" defer></script>
-    <script src="src/js/new-arrivals.js" defer></script>
+    <script type="module" src="src/js/new-arrivals.js" defer></script>
   </head>
 
   <body>
@@ -65,114 +65,7 @@
 
       <h1 class="new-arrivals">New Arrivals</h1>
 
-      <section class="products">
-        <!-- PRODUCT 1 -->
-        <div class="product">
-          <a href="product-detail.html">
-            <img src="images/Fjord-Guard.jpg" alt="Fjord Guard" />
-          </a>
-          <p class="title">Fjord Guard <span class="price">£110</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size is-selected">XS</button>
-            <button class="size is-off" disabled>S</button>
-            <button class="size is-off" disabled>M</button>
-            <button class="size">L</button>
-            <button class="size is-off" disabled>XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="product">
-          <img src="images/Alpine-Scott.jpg" alt="Alpine Scott" />
-          <p class="title">Alpine Scott <span class="price">£100</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size">XS</button>
-            <button class="size">S</button>
-            <button class="size is-selected">M</button>
-            <button class="size">L</button>
-            <button class="size">XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="product">
-          <img src="images/Roam_Wind_Women.jpg" alt="Roam Wind Women" />
-          <p class="title">Roam Wind Women <span class="price">£80</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size">XS</button>
-            <button class="size">S</button>
-            <button class="size is-off" disabled>M</button>
-            <button class="size is-selected">L</button>
-            <button class="size is-off" disabled>XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 4 -->
-        <div class="product">
-          <img src="images/Green-Camp.jpg" alt="Green Camp" />
-          <p class="title">Green Camp <span class="price">£85</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size">XS</button>
-            <button class="size is-off" disabled>S</button>
-            <button class="size">M</button>
-            <button class="size is-selected">L</button>
-            <button class="size">XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 5 -->
-        <div class="product">
-          <img src="images/Alpine-Scott.jpg" alt="Alpine Scott" />
-          <p class="title">Alpine Scott <span class="price">£100</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size is-selected">XS</button>
-            <button class="size">S</button>
-            <button class="size">M</button>
-            <button class="size">L</button>
-            <button class="size">XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 6 -->
-        <div class="product">
-          <img src="images/Echo-Black.jpg" alt="Echo Black" />
-          <p class="title">Echo Black <span class="price">£99</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size is-off" disabled>XS</button>
-            <button class="size is-selected">S</button>
-            <button class="size">M</button>
-            <button class="size">L</button>
-            <button class="size">XL</button>
-          </div>
-        </div>
-
-        <!-- PRODUCT 7 -->
-        <div class="product">
-          <img src="images/Grey-Trekker.jpg" alt="Grey Trekker" />
-          <p class="title">Grey Trekker <span class="price">£98</span></p>
-          <p class="sizes-label">Sizes available:</p>
-
-          <div class="size-buttons">
-            <button class="size">XS</button>
-            <button class="size">S</button>
-            <button class="size is-selected">M</button>
-            <button class="size">L</button>
-            <button class="size">XL</button>
-          </div>
-        </div>
-      </section>
+      <section class="products" id="products"></section>
     </main>
 
     <!-- FOOTER -->
@@ -221,7 +114,7 @@
             </ul>
           </div>
 
-          <section class="social-media-footer">
+          <!-- <section class="social-media-footer">
             <div class="customer-information">
               <h4 class="footer-headers"><strong>Available On:</strong></h4>
               <img src="images/appstore.png" alt="App Store" />
@@ -252,7 +145,7 @@
         <p class="footer-copy">
           copyright © Rainy Days 2025. All rights reserved.
         </p>
-      </section>
+      </section> -->
     </footer>
   </body>
 </html>

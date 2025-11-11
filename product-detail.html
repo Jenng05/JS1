@@ -26,7 +26,7 @@
 
     <!-- JS -->
     <script src="src/js/main.js" defer></script>
-    <script src="src/js/product-detail.js" defer></script>
+    <script type="module" src="src/js/product-detail.js" defer></script>
   </head>
   <body>
     <header class="main-header">
@@ -66,80 +66,31 @@
       </div>
 
       <section class="product-detail">
-        <div class="product-image">
-          <img src="images/Fjord-Guard.jpg" alt="Fjord Guard jacket" />
+        <div class="product-image left">
+          <img id="pd-img" src="" alt="" />
         </div>
 
-        <div class="product-info">
+        <div class="product-name">
           <div class="product-name-row">
-            <h1 class="product-title">Fjord Guard</h1>
-            <span class="highlight_price">£110</span>
+            <h1 id="pd-title" class="product-title"></h1>
+            <span id="pd-price" class="highlight_price"></span>
           </div>
 
           <div class="size-label-row">
             <p class="under-category-sizes">Sizes available:</p>
-            <a href="#" class="size-label-highlight"
-              >Find my size / Size guide</a
-            >
+            <span class="size-label-highlight">Find my size / Size guide</span>
           </div>
 
-          <!-- Samme knappestil som på forsiden -->
-          <div class="size-buttons">
-            <button class="size is-selected" aria-pressed="true">XS</button>
-            <button class="size is-off" disabled>S</button>
-            <button class="size is-off" disabled>M</button>
-            <button class="size">L</button>
-            <button class="size is-off" disabled>XL</button>
-          </div>
+          <div id="pd-sizes" class="size-buttons"></div>
+
+          <p id="pd-desc" class="p-1"></p>
 
           <div class="product-action">
-            <a href="cart-popup.html" class="add-to-cart" role="button"
-              >Add to Cart</a
-            >
+            <a id="pd-add" class="add-to-cart" href="#">Add to Cart</a>
             <button class="like-icon" aria-label="Add to wishlist">
-              <i class="fas fa-heart" aria-hidden="true"></i>
+              <i class="fas fa-heart"></i>
             </button>
           </div>
-
-          <div class="jacket-information">
-            <p class="p-1">
-              Built for the bold, crafted for the elements. Conquer the fjords,
-              trails, and mountain passes with confidence in the Fjord Guard
-              Jacket.
-            </p>
-            <p class="p-2">
-              Designed for active adventures, this jacket delivers
-              high-performance weather protection without sacrificing mobility
-              or comfort.
-            </p>
-          </div>
-
-          <section class="accordion">
-            <div class="accordion-item">
-              <hr />
-              <div class="accordion-header">
-                <h3>Fit</h3>
-                <span class="arrow-icon">&#9660;</span>
-              </div>
-              <hr />
-            </div>
-
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <h3>Specs &amp; Features</h3>
-                <span class="arrow-icon">&#9660;</span>
-              </div>
-              <hr />
-            </div>
-
-            <div class="accordion-item">
-              <div class="accordion-header">
-                <h3>Material &amp; Care Instructions</h3>
-                <span class="arrow-icon">&#9660;</span>
-              </div>
-              <hr />
-            </div>
-          </section>
         </div>
       </section>
     </main>
@@ -190,7 +141,7 @@
             </ul>
           </div>
           <!--third column-->
-          <section class="social-media-footer">
+          <!-- <section class="social-media-footer">
             <div class="customer-information">
               <h4 class="footer-headers"><strong>Available On:</strong></h4>
               <img src="images/appstore.png" alt="App Store" />
@@ -232,7 +183,7 @@
                 /></a>
               </div>
             </div>
-          </section>
+          </section> -->
         </div>
         <hr class="footer-hr footer-bottom" />
         <p class="footer-copy">
