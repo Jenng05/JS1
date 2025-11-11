@@ -1,37 +1,108 @@
+/* === New Arrivals – match forsiden === */
+
+/* Grid */
 .product-list {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 7rem;
-padding: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 80px;
+  align-items: start;
+  padding: 2rem;
+  margin: 24px 0 64px;
 }
 
+/* Kort */
 .product-info {
-background-color: white;
-border-radius: 10px;
-padding: 1rem;
-text-align: left;
-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-border: 0.2rem solid var(--main-color);
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
 }
 
+/* Bilde i kortet */
 .product-info img {
-max-width: 70%;
-height: 330px;
-border-radius: 8px;
-margin-left: 4rem;
+  width: 100%;
+  height: 260px;        /* kontroller høyden */
+  object-fit: cover;    /* crop pent */
+  display: block;
+  border-radius: 8px;
+  margin: 0;            /* fjern gammel venstremarg */
 }
 
+/* Tittel + pris på én linje */
 .product-card-info {
-    display: flex;
-    justify-content: space-between;
-}
-.sizes span.unavailible {
-background: #ccc;
-color:#666
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px 0 6px;
+  font-weight: 700;
 }
 
+/* Pris (valgfritt litt tydeligere) */
+.product-price { font-weight: 600; }
+
+/* "Sizes available" */
 .sizes-availible {
-text-decoration: underline;
-} 
+  margin: 6px 0 8px;
+  text-decoration: underline;
+}
+
+/* Størrelsesvisning (tekst-variant) */
+.sizes {
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+/* Utsolgte størrelser */
+.sizes .unavailable {
+  opacity: 0.45;
+  text-decoration: line-through;
+}
+
+/* Lenker på kort – behold farger/uten underline */
+.product-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Responsivt */
+@media (max-width: 768px) {
+  .product-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .product-list { grid-template-columns: 1fr; }
+}
+
+/* === Size buttons – samme som forsiden === */
+.size-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.size {
+  padding: 8px 12px;
+  border: 1px solid #0a2c3d;
+  background: #fff;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.size:hover:not(.is-off) {
+  background: #0a2c3d;
+  color: white;
+}
+
+.size.is-selected {
+  background: #072532;
+  color: #fff;
+  border-color: #072532;
+}
+
+.size.is-off {
+  opacity: 0.45;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

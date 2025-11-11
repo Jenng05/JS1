@@ -1,11 +1,13 @@
-*body {
-    font-family:'Mohave',arial, sans-serif;
-    color: #111;
-    background-color: #fff;
-    line-height: 1.6;
+/* Base */
+body {
+  font-family: 'Mohave', Arial, sans-serif;
+  color: #111;
+  background-color: #fff;
+  line-height: 1.6;
 }
 
-*.breadcrumb a, .breadcrumb {
+.breadcrumb a,
+.breadcrumb {
   letter-spacing: 2px;
   color: gray;
   text-decoration: none;
@@ -13,40 +15,24 @@
   margin-left: 15px;
 }
 
-*.highlight {
-  text-decoration: underline;
-}
+.highlight { text-decoration: underline; }
 
-/* Header styling */
-
+/* Header (tilbake til “gammel” oppsett) */
 .main-header {
   background-color: var(--main-color);
-  padding: 2.5rem 2rem;
-  color: white;
+  color: #fff;
 }
 
+/* 3 kolonner: venstre nav, logo i midten, ikoner til høyre */
 .header-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 570px;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
 }
-
-.logo {
-  position: relative;
-  width: 200px;
-  height: auto;
-}
-
-img.enlarged {
-  position: absolute;
-  width: 170px;
-  top: -75px;
-  left: 0;
-  z-index: 1;
-}
-
 
 .main-nav ul {
   display: flex;
@@ -54,10 +40,11 @@ img.enlarged {
   list-style: none;
   margin: 0;
   padding: 0;
+  justify-content: flex-start;
 }
 
 .main-nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-size: 1rem;
   letter-spacing: 1.5px;
@@ -67,14 +54,29 @@ img.enlarged {
   text-decoration: underline;
 }
 
-.header-icons {
+/* Logo midtstilt, ingen absolutte posisjoner */
+.logo {
   display: flex;
-  gap: 4rem;
+  justify-content: center;
   align-items: center;
 }
 
+img.enlarged {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+
+/* Ikoner høyrejustert */
+.header-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
 .header-icons i {
-  color: white;
+  color: #fff;
   font-size: 1.25rem;
   cursor: pointer;
   transition: transform 0.2s ease;
@@ -83,6 +85,17 @@ img.enlarged {
 .header-icons i:hover {
   transform: scale(1.2);
 }
+
+
+
+/* Responsivt – litt tettere på små skjermer */
+@media (max-width: 768px) {
+  .main-header { padding: 0.75rem 1rem; }
+  .header-container { column-gap: 1rem; }
+  .main-nav ul { gap: 1rem; }
+  .logo img { height: 48px; }
+}
+
 
 /* Hero section background */
 .welcome {
@@ -217,77 +230,90 @@ p.welcome_subtext {
   margin-top: 32px;
 }
 
-/*New arrival section*/
-
-.new-arrivals{
-  text-decoration: underline;
-  margin-bottom: -5px;
-  margin-top: 50px;
-
+/* --- New arrivals (forside) --- */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 80px;
+  align-items: start;
+  margin: 24px 0 48px;
 }
 
-.product-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-  scroll-snap-type: x mandatory;
-  margin-bottom: 75px;
-}
-
-.product-card {
-  flex: 0 0 calc(100% / 4);
-  width: 400px;
-  scroll-snap-align: start;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 1rem;
+.product {
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 12px;
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  height: 390px;
 }
 
-.product-card img {
-  height: 250px;
+.product img {
+  width: 100%;
+  height: 260px;           /* hindrer at bildet blir kjempestort */
+  object-fit: cover;       /* cropp pent */
   display: block;
-  margin: 0 auto;
+  border-radius: 8px;
 }
 
-.product-title-price {
+.title {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 25px;
+  margin: 10px 0 6px;
+  font-weight: 700;
 }
 
-.product-price {
-  color: #111;
-  font-weight: bold;
+.price { font-weight: 600; }
+
+.sizes-label { margin: 6px 0 2px; }
+
+.sizes { 
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
 }
 
-.sizes-underline {
-  font-style: italic;
-  text-decoration: underline;
-  margin-bottom: 0px;
+.sizes .off {
+  opacity: 0.4;
+  text-decoration: line-through;
 }
 
-.sizes span {
-  display: inline;
-  background: #002d45;
-  color: white;
-  padding: 0.7rem 2rem;
-  margin: 0.2rem;
-  border-radius: 15px;
-  font-size: 1rem;
+/* Mobil-tilpasning */
+@media (max-width: 768px) {
+  .products { grid-template-columns: 1fr 1fr; }
 }
 
-.sizes span.unavailable {
-  background: #ccc;
-  color: #666;
+@media (max-width: 480px) {
+  .products { grid-template-columns: 1fr; }
 }
+
+.size-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.size {
+  padding: 6px 12px;
+  border: 1px solid #0a2c3d;
+  background: #fff;
+  border-radius: 20px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.size:hover { background: #f2f6f8; }
+
+.size.is-selected {
+  background: #0a2c3d;
+  color: #fff;
+}
+
+.size.is-off,
+.size:disabled {
+  opacity: .45;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
 
 
 /*Footer*/
