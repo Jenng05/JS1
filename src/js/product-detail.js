@@ -1,0 +1,1 @@
+console.log('product-detail.js loaded ✅');

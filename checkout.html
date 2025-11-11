@@ -1,136 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Jackets for Men and Women">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Complete your Rainy Days purchase." />
+
     <title>Rainy Days | Checkout</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/product-detail.css">
-    <link rel="stylesheet" href="src/css/new-arrivals.css">
-    <link rel="stylesheet" href="src/css/cart-popup.css">
-    <link rel="stylesheet" href="src/css/checkout.css">
-    <link rel="stylesheet" href="src/css/thankyou.css">
-    <link rel="stylesheet" href="src/css/_variables.css">
-    <link rel="stylesheet" href="src/css/_global_media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="src/css/_variables.css" />
+    <link rel="stylesheet" href="src/css/_global_media.css" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+
+    <!-- Page-specific -->
+    <link rel="stylesheet" href="src/css/checkout.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- JS -->
+    <script src="src/js/main.js" defer></script>
   </head>
-    <body>
+
+  <body>
     <header class="main-header">
       <div class="header-container">
-          <nav class="main-nav">
+        <nav class="main-nav">
           <ul>
             <li><a href="error.html">Shop</a></li>
             <li><a href="error.html">Sports</a></li>
             <li><a href="error.html">Activism</a></li>
           </ul>
         </nav>
-          <a href="index.html" class="logo">
-            <img src="images/logo.png" class="enlarged" alt="Rainy Days logo">
-          </a>
-    
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" class="enlarged" alt="Rainy Days logo" />
+        </a>
+
         <div class="header-icons">
-        <a href="error.html" aria-label="Search">
-          <i class="fas fa-search"></i>
-        </a>
+          <a href="error.html" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </a>
 
-        <a href="checkout.html" aria-label="Cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
+          <a href="checkout.html" aria-label="Cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
 
-        <a href="error.html" aria-label="Profile">
-          <i class="fas fa-user"></i>
-        </a>
-      </div>
-
+          <a href="error.html" aria-label="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
       </div>
     </header>
     <main>
       <div class="breadcrumb">
-      <h4>
-    <a href="index.html">Home/ </a>
-    <a href="new-arrivals.html">New Arrivals/ </a> 
-    <a href="product-detail.html">Product Detail - Fjord Guard/ </a>
-    <span class="highlight">Order Summary - Checkout</span></h4>
+        <h4>
+          <a href="index.html">Home/ </a>
+          <a href="new-arrivals.html">New Arrivals/ </a>
+          <a href="product-detail.html">Product Detail - Fjord Guard/ </a>
+          <span class="highlight">Order Summary - Checkout</span>
+        </h4>
       </div>
-    
 
-    <div class="checkout-header">
-    <h1 style="margin-bottom: -15px">Checkout</h1>
-    <h2 style="font-size: 19px;margin-top: 15px;">Almost there! Let's finish up</h2>
-    </div>
+      <div class="checkout-header">
+        <h1 style="margin-bottom: -15px">Checkout</h1>
+        <h2 style="font-size: 19px; margin-top: 15px">
+          Almost there! Let's finish up
+        </h2>
+      </div>
 
-
-    <section class="checkout-layout">
+      <section class="checkout-layout">
         <div class="checkout-form">
           <section class="information-section">
-          <div class="your-information-container">
-          <p class="header-container-section">1. Your Information</p>
-        <input type="text" placeholder="Email..." name="Email">
-        <input type="text" placeholder="First name..." name="First name">
-        <input type="text" placeholder="Surname..." name="Surname...">
-        <input type="text" placeholder="Phone number..." name="Phone number...">
-        </div>
-        <div class="information-catagory">
-            <button class="checkout-button">Continue to Shipping</button>
-            <button class="checkout-button">2.Shipping</button>
-            <button class="checkout-button">3.Payment</button>
-            <a href="thankyou.html" class="checkout-button order-confirmation">4. Order confirmation</a>
-        </div>
-        </section>
+            <div class="your-information-container">
+              <p class="header-container-section">1. Your Information</p>
+              <input type="text" placeholder="Email..." name="Email" />
+              <input
+                type="text"
+                placeholder="First name..."
+                name="First name"
+              />
+              <input type="text" placeholder="Surname..." name="Surname..." />
+              <input
+                type="text"
+                placeholder="Phone number..."
+                name="Phone number..."
+              />
+            </div>
+            <div class="information-catagory">
+              <button class="checkout-button">Continue to Shipping</button>
+              <button class="checkout-button">2.Shipping</button>
+              <button class="checkout-button">3.Payment</button>
+              <a href="thankyou.html" class="checkout-button order-confirmation"
+                >4. Order confirmation</a
+              >
+            </div>
+          </section>
         </div>
 
-    <div class="order-summary">
-        <h2 class="heading-summary"><span>Order Summary</span> <a href="product-detail.html" class="edit-button">Edit</a></h2>
-        <hr class="checkout-hr">
-        <div class="order-information">
-            <img src="images/Fjord-Guard.jpg" alt="Fjord Guard jacket" class="checkout-fjord-guard">
-            
+        <div class="order-summary">
+          <h2 class="heading-summary">
+            <span>Order Summary</span>
+            <a href="product-detail.html" class="edit-button">Edit</a>
+          </h2>
+          <hr class="checkout-hr" />
+          <div class="order-information">
+            <img
+              src="images/Fjord-Guard.jpg"
+              alt="Fjord Guard jacket"
+              class="checkout-fjord-guard"
+            />
+
             <div class="order-summary-info">
-            <h3>Item: Fjord Guard Jacket | Size: L </h3>
-            <h3>Qty: 1 | £110</h3>
-            <h3 class="order-summary-price">£110</h3> 
+              <h3>Item: Fjord Guard Jacket | Size: L</h3>
+              <h3>Qty: 1 | £110</h3>
+              <h3 class="order-summary-price">£110</h3>
             </div>
-        </div>
-        
-        <section class="summary-text-price">
-            <h4 class="promo-code">Do you have a promo code? <span class="summary-information">+</span></h4>
-            <hr class="checkout-hr">
+          </div>
+
+          <section class="summary-text-price">
+            <h4 class="promo-code">
+              Do you have a promo code?
+              <span class="summary-information">+</span>
+            </h4>
+            <hr class="checkout-hr" />
             <div class="subtotal-shipping-information">
-            <h4>Subtotal: <span class="summary-information">£110</span></h4>
-            <h4>Estimated Shipping: <span class="summary-information">FREE</span></h4>
-            <hr class="checkout-hr">
+              <h4>Subtotal: <span class="summary-information">£110</span></h4>
+              <h4>
+                Estimated Shipping:
+                <span class="summary-information">FREE</span>
+              </h4>
+              <hr class="checkout-hr" />
             </div>
-            <h4 class="estimated-total">Estimated Total: <span class="summary-information">£110</span></h4>
-        </section>
-    </div>
-    </section>
-
-
+            <h4 class="estimated-total">
+              Estimated Total: <span class="summary-information">£110</span>
+            </h4>
+          </section>
+        </div>
+      </section>
     </main>
     <!--Footer-->
     <footer class="footer-container">
       <section class="logo-newsletter">
         <div class="footer-logo">
-        <img src="images/footer.logo.png" class="footer-enlarged" alt="Rainy Days logo">
+          <img
+            src="images/footer.logo.png"
+            class="footer-enlarged"
+            alt="Rainy Days logo"
+          />
         </div>
-        
+
         <div class="newsletter">
-        <input
-          type="text"
-          class="newsletter-input-text"
-          placeholder="Enter your email to get the latest news..."
-          name="text">
+          <input
+            type="text"
+            class="newsletter-input-text"
+            placeholder="Enter your email to get the latest news..."
+            name="text"
+          />
           <button disabled>Subscribe</button>
         </div>
       </section>
 
-        <hr class="footer-hr">
-        <section class="footer-links">
-          <!--first column-->
-          <div class="footer-text">
+      <hr class="footer-hr" />
+      <section class="footer-links">
+        <!--first column-->
+        <div class="footer-text">
           <div class="customer-information">
-            <h4 class="footer-headers"><strong>Customer Service:</strong> </h4>
+            <h4 class="footer-headers"><strong>Customer Service:</strong></h4>
             <ul>
               <li>FAQs</li>
               <li>Delivery</li>
@@ -150,32 +188,54 @@
           </div>
           <!--third column-->
           <section class="social-media-footer">
-          <div class="customer-information">
-            <h4 class="footer-headers"><strong>Available On:</strong></h4>
-            <img src="images/appstore.png" alt="App Store">
-            <img src="images/googleplay.png" alt="Google Play">
-          </div>
-          <div>
-            <h4 class="customer-information">Follow Us:</h4>
-            <div class="social-icons">
-              <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
-              <img src="images/youtube.svg" alt="YouTube"></a>
-
-              <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-              <img src="images/facebook.svg" alt="Facebook"></a>
-
-              <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-              <img src="images/instagram.svg" alt="Instagram"></a>
-
-              <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-              <img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <div class="customer-information">
+              <h4 class="footer-headers"><strong>Available On:</strong></h4>
+              <img src="images/appstore.png" alt="App Store" />
+              <img src="images/googleplay.png" alt="Google Play" />
             </div>
-          </div>
+            <div>
+              <h4 class="customer-information">Follow Us:</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  aria-label="YouTube"
+                >
+                  <img src="images/youtube.svg" alt="YouTube"
+                /></a>
+
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <img src="images/facebook.svg" alt="Facebook"
+                /></a>
+
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <img src="images/instagram.svg" alt="Instagram"
+                /></a>
+
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <img src="images/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
           </section>
-          </div>
-          <hr class="footer-hr footer-bottom">
-         <p class="footer-copy">copyright &copy; Rainy Days 2025. All rights reserved.</p> 
-        </section>
+        </div>
+        <hr class="footer-hr footer-bottom" />
+        <p class="footer-copy">
+          copyright &copy; Rainy Days 2025. All rights reserved.
+        </p>
+      </section>
     </footer>
   </body>
 </html>

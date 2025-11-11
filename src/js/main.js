@@ -18,3 +18,6 @@ fetch('https://v2.api.noroff.dev/rainy-days', options)
     }
   })
   .catch(error => console.error(error));
+
+console.log('main.js loaded ✅');
+

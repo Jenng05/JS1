@@ -1,83 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Page Not Found</title>
-  <link rel="stylesheet" href="src/css/styles.css">
-  <link rel="stylesheet" href="src/css/product-detail.css">
-  <link rel="stylesheet" href="src/css/new-arrivals.css">
-  <link rel="stylesheet" href="src/css/cart-popup.css">
-  <link rel="stylesheet" href="src/css/checkout.css">
-  <link rel="stylesheet" href="src/css/thankyou.css">
-  <link rel="stylesheet" href="src/css/_global_media.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Mohave&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="main-header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Error page for Rainy Days website." />
 
+    <title>Rainy Days | Error</title>
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="src/css/_variables.css" />
+    <link rel="stylesheet" href="src/css/_global_media.css" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+
+    <!-- Page-specific -->
+    <link rel="stylesheet" href="src/css/error.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- JS (optional – main.js only if navigation etc. is needed) -->
+    <script src="src/js/main.js" defer></script>
+  </head>
+
+  <body>
+    <header class="main-header">
       <div class="header-container">
-          <nav class="main-nav">
+        <nav class="main-nav">
           <ul>
             <li><a href="error.html">Shop</a></li>
             <li><a href="error.html">Sports</a></li>
             <li><a href="error.html">Activism</a></li>
           </ul>
         </nav>
-          <a href="index.html" class="logo">
-          <img src="images/logo.png" class="enlarged" alt="Rainy Days logo">
-          </a>
+        <a href="index.html" class="logo">
+          <img src="images/logo.png" class="enlarged" alt="Rainy Days logo" />
+        </a>
         <div class="header-icons">
-        <a href="error.html" aria-label="Search">
-          <i class="fas fa-search"></i>
-        </a>
+          <a href="error.html" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </a>
 
-        <a href="checkout.html" aria-label="Cart">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
+          <a href="checkout.html" aria-label="Cart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
 
-        <a href="error.html" aria-label="Profile">
-          <i class="fas fa-user"></i>
-        </a>
+          <a href="error.html" aria-label="Profile">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
       </div>
-      </div>
-
     </header>
 
     <main>
-    <section class="thank-you-container">
-      <img src="images/mountain.logo.png.png" alt="Rainy Days Mountain logo" class="mountain-logo">
-      <div class="confirmation-text">
-        <h1>404</h1>
-        <p>Oops! The page you're looking for can't be found.</p>
-        <a href="index.html" class="cta">Go Back Home</a>
+      <section class="thank-you-container">
+        <img
+          src="images/mountain.logo.png.png"
+          alt="Rainy Days Mountain logo"
+          class="mountain-logo"
+        />
+        <div class="confirmation-text">
+          <h1>404</h1>
+          <p>Oops! The page you're looking for can't be found.</p>
+          <a href="index.html" class="cta">Go Back Home</a>
         </div>
-        </section>
+      </section>
     </main>
 
-      <!--Footer-->
+    <!--Footer-->
     <footer class="footer-container">
       <section class="logo-newsletter">
         <div class="footer-logo">
-        <img src="images/footer.logo.png" class="footer-enlarged" alt="Rainy Days logo">
+          <img
+            src="images/footer.logo.png"
+            class="footer-enlarged"
+            alt="Rainy Days logo"
+          />
         </div>
-        
+
         <div class="newsletter">
-        <input
-          type="text"
-          class="newsletter-input-text"
-          placeholder="Enter your email to get the latest news..."
-          name="text">
+          <input
+            type="text"
+            class="newsletter-input-text"
+            placeholder="Enter your email to get the latest news..."
+            name="text"
+          />
           <button disabled>Subscribe</button>
         </div>
       </section>
 
-        <hr class="footer-hr">
-        <section class="footer-links">
-          <!--first column-->
-          <div class="footer-text">
+      <hr class="footer-hr" />
+      <section class="footer-links">
+        <!--first column-->
+        <div class="footer-text">
           <div class="customer-information">
-            <h4 class="footer-headers"><strong>Customer Service:</strong> </h4>
+            <h4 class="footer-headers"><strong>Customer Service:</strong></h4>
             <ul>
               <li>FAQs</li>
               <li>Delivery</li>
@@ -97,32 +116,54 @@
           </div>
           <!--third column-->
           <section class="social-media-footer">
-          <div class="customer-information">
-            <h4 class="footer-headers"><strong>Available On:</strong></h4>
-            <img src="images/appstore.png" alt="App Store">
-            <img src="images/googleplay.png" alt="Google Play">
-          </div>
-          <div>
-            <h4 class="customer-information">Follow Us:</h4>
-            <div class="social-icons">
-              <a href="https://www.youtube.com" target="_blank" aria-label="YouTube">
-              <img src="images/youtube.svg" alt="YouTube"></a>
-
-              <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
-              <img src="images/facebook.svg" alt="Facebook"></a>
-
-              <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
-              <img src="images/instagram.svg" alt="Instagram"></a>
-
-              <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn">
-              <img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <div class="customer-information">
+              <h4 class="footer-headers"><strong>Available On:</strong></h4>
+              <img src="images/appstore.png" alt="App Store" />
+              <img src="images/googleplay.png" alt="Google Play" />
             </div>
-          </div>
+            <div>
+              <h4 class="customer-information">Follow Us:</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.youtube.com"
+                  target="_blank"
+                  aria-label="YouTube"
+                >
+                  <img src="images/youtube.svg" alt="YouTube"
+                /></a>
+
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  aria-label="Facebook"
+                >
+                  <img src="images/facebook.svg" alt="Facebook"
+                /></a>
+
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  aria-label="Instagram"
+                >
+                  <img src="images/instagram.svg" alt="Instagram"
+                /></a>
+
+                <a
+                  href="https://www.linkedin.com"
+                  target="_blank"
+                  aria-label="LinkedIn"
+                >
+                  <img src="images/linkedin.svg" alt="LinkedIn"
+                /></a>
+              </div>
+            </div>
           </section>
-          </div>
-          <hr class="footer-hr footer-bottom">
-         <p class="footer-copy">copyright &copy; Rainy Days 2025. All rights reserved.</p> 
-        </section>
+        </div>
+        <hr class="footer-hr footer-bottom" />
+        <p class="footer-copy">
+          copyright &copy; Rainy Days 2025. All rights reserved.
+        </p>
+      </section>
     </footer>
-</body>
+  </body>
 </html>

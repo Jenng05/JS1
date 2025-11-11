@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="view a list of new arrival jackets for men and women">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainy Days | Added to Cart</title>
-    <link rel="stylesheet" href="src/css/styles.css">
-    <link rel="stylesheet" href="src/css/product-detail.css">
-    <link rel="stylesheet" href="src/css/new-arrivals.css">
-    <link rel="stylesheet" href="src/css/cart-popup.css">
-    <link rel="stylesheet" href="src/css/checkout.css">
-    <link rel="stylesheet" href="src/css/thankyou.css">
-    <link rel="stylesheet" href="src/css/_variables.css">
-    <link rel="stylesheet" href="src/css/_global_media.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Review your selected Rainy Days products before checkout."
+    />
+
+    <title>Rainy Days | Cart</title>
+
+    <!-- Base styles -->
+    <link rel="stylesheet" href="src/css/_variables.css" />
+    <link rel="stylesheet" href="src/css/_global_media.css" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+
+    <!-- Page-specific -->
+    <link rel="stylesheet" href="src/css/cart-popup.css" />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- JS -->
+    <script src="src/js/main.js" defer></script>
   </head>
-    <body class="popup-background">
-   <div class="cart-popup">
-    <h2>Item added to cart</h2>
-    <img src="images/Fjord-Guard.jpg" alt="Fjord Guard" class="popup-image">
 
-    <h3>Fjord Guard</h3>
-    <p><em>Men’s Jacket | Size: L | £110</em></p>
+  <body class="popup-background">
+    <div class="cart-popup">
+      <h2>Item added to cart</h2>
+      <img src="images/Fjord-Guard.jpg" alt="Fjord Guard" class="popup-image" />
 
-    <div class="quantity">
-      <button>-</button>
-      <span>1</span>
-      <button>+</button>
+      <h3>Fjord Guard</h3>
+      <p><em>Men’s Jacket | Size: L | £110</em></p>
+
+      <div class="quantity">
+        <button>-</button>
+        <span>1</span>
+        <button>+</button>
+      </div>
+
+      <a href="checkout.html" class="checkout-btn">Checkout (1)</a>
+      <a href="index.html" class="continue-link">Continue shopping</a>
     </div>
-
-    <a href="checkout.html" class="checkout-btn">Checkout (1)</a>
-    <a href="index.html" class="continue-link">Continue shopping</a>
-  </div>
-</body>
+  </body>
 </html>

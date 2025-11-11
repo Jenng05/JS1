@@ -302,11 +302,6 @@ p.welcome_subtext {
 
 .size:hover { background: #f2f6f8; }
 
-.size.is-selected {
-  background: #0a2c3d;
-  color: #fff;
-}
-
 .size.is-off,
 .size:disabled {
   opacity: .45;
