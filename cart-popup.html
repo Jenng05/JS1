@@ -26,24 +26,20 @@
 
     <!-- JS -->
     <script src="src/js/main.js" defer></script>
+    <script type="module" src="src/js/cart-popup.js"></script>
   </head>
 
   <body class="popup-background">
-    <div class="cart-popup">
-      <h2>Item added to cart</h2>
-      <img src="images/Fjord-Guard.jpg" alt="Fjord Guard" class="popup-image" />
-
-      <h3>Fjord Guard</h3>
-      <p><em>Men’s Jacket | Size: L | £110</em></p>
-
-      <div class="quantity">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
-      </div>
-
-      <a href="checkout.html" class="checkout-btn">Checkout (1)</a>
-      <a href="index.html" class="continue-link">Continue shopping</a>
-    </div>
+    <main>
+      <section class="cart-popup">
+        <h1>Added to cart</h1>
+        <div id="cart-summary">Loading…</div>
+        <div class="actions">
+          <a class="cta" href="new-arrivals.html">Continue shopping</a>
+          <a class="cta" href="checkout.html">Go to checkout</a>
+        </div>
+      </section>
+      <script type="module" src="src/js/cart-popup.js"></script>
+    </main>
   </body>
 </html>

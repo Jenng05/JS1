@@ -1,4 +1,4 @@
-
+// src/js/api.js
 const API_URL = 'https://v2.api.noroff.dev/rainy-days';
 
 const options = {
@@ -11,8 +11,9 @@ const options = {
 
 let _cache = null;
 
-export async function fetchProducts() {
-  if (_cache) return _cache;
+/** Hent alle produkter (bruker cache med mindre force=true) */
+export async function fetchProducts(force = false) {
+  if (!force && _cache) return _cache;
   const res = await fetch(API_URL, options);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const json = await res.json();
@@ -20,8 +21,30 @@ export async function fetchProducts() {
   return _cache;
 }
 
-export async function fetchProductById(id) {
-  const all = await fetchProducts();
-  return all.find(p => p.id === id) || null;
+/** Finn raskt i cache (kan være null) */
+export function findProductInCache(id) {
+  return (_cache || []).find(p => p.id === id) || null;
 }
 
+/** Hent ett produkt: cache -> direkte endpoint -> fallback til å hente alle */
+export async function fetchProductById(id) {
+  // 1) cache
+  const hit = findProductInCache(id);
+  if (hit) return hit;
+
+  // 2) direkte endpoint (billig hvis backend støtter det)
+  try {
+    const res = await fetch(`${API_URL}/${encodeURIComponent(id)}`, options);
+    if (res.ok) {
+      const json = await res.json();
+      const p = json?.data ?? null;
+      if (p) return p;
+    }
+  } catch (_) {
+    // ignorer, faller tilbake til 3)
+  }
+
+  // 3) fallback: hent alle og finn
+  const all = await fetchProducts(true);
+  return findProductInCache(id);
+}
