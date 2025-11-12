@@ -1,4 +1,3 @@
-// src/js/product-detail.js
 import { fetchProductById } from './api.js';
 
 const params = new URLSearchParams(location.search);
@@ -39,7 +38,7 @@ function renderDetail(p) {
   const priceEl = document.querySelector('.highlight_price, #pd-price');
   if (priceEl) priceEl.textContent = `£${p.discountedPrice ?? p.price ?? ''}`;
 
-  // Description (optional)
+  // Description
   const descEl = document.querySelector('#pd-desc');
   if (descEl) descEl.textContent = p.description || p.descriptionShort || '';
 

@@ -1,4 +1,3 @@
-// src/js/new-arrivals.js
 import { fetchProducts } from './api.js';
 
 const container =

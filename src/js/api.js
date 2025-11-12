@@ -1,4 +1,3 @@
-// src/js/api.js
 const API_URL = 'https://v2.api.noroff.dev/rainy-days';
 
 const options = {
@@ -11,7 +10,7 @@ const options = {
 
 let _cache = null;
 
-/** Hent alle produkter (bruker cache med mindre force=true) */
+/* Hent alle produkter */
 export async function fetchProducts(force = false) {
   if (!force && _cache) return _cache;
   const res = await fetch(API_URL, options);
@@ -21,7 +20,7 @@ export async function fetchProducts(force = false) {
   return _cache;
 }
 
-/** Finn raskt i cache (kan være null) */
+/** Finn raskt i cache - kan være null */
 export function findProductInCache(id) {
   return (_cache || []).find(p => p.id === id) || null;
 }

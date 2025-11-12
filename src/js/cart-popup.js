@@ -18,7 +18,7 @@ const box = document.querySelector('#cart-summary');
       return;
     }
 
-    // (Optional) store to localStorage as a real “cart”
+    // store to localStorage as a real “cart”
     addToCart({ id: p.id, title: p.title, price: p.discountedPrice ?? p.price, size, qty: 1 });
 
     box.innerHTML = `
