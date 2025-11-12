@@ -9,6 +9,7 @@ init();
 async function init() {
   if (!container) return;
   try {
+    container.innerHTML = '<p>Loading…</p>';
     const products = await fetchProducts();
     container.innerHTML = products.map(cardHTML).join('');
   } catch (err) {

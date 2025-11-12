@@ -23,6 +23,7 @@
 
     <!-- JS -->
     <script src="src/js/main.js" defer></script>
+    <script type="module" src="src/js/checkout.js" defer></script>
   </head>
 
   <body>
@@ -54,93 +55,76 @@
         </div>
       </div>
     </header>
+
     <main>
-      <div class="breadcrumb">
-        <h4>
-          <a href="index.html">Home/ </a>
-          <a href="new-arrivals.html">New Arrivals/ </a>
-          <a href="product-detail.html">Product Detail - Fjord Guard/ </a>
-          <span class="highlight">Order Summary - Checkout</span>
-        </h4>
-      </div>
-
-      <div class="checkout-header">
-        <h1 style="margin-bottom: -15px">Checkout</h1>
-        <h2 style="font-size: 19px; margin-top: 15px">
-          Almost there! Let's finish up
-        </h2>
-      </div>
-
       <section class="checkout-layout">
-        <div class="checkout-form">
-          <section class="information-section">
-            <div class="your-information-container">
-              <p class="header-container-section">1. Your Information</p>
-              <input type="text" placeholder="Email..." name="Email" />
-              <input
-                type="text"
-                placeholder="First name..."
-                name="First name"
-              />
-              <input type="text" placeholder="Surname..." name="Surname..." />
-              <input
-                type="text"
-                placeholder="Phone number..."
-                name="Phone number..."
-              />
-            </div>
+        <!-- Venstre kolonne: Skjema -->
+        <div>
+          <h1>Checkout</h1>
+
+          <form id="co-form" novalidate>
+            <h2>Your details</h2>
             <div class="information-catagory">
-              <button class="checkout-button">Continue to Shipping</button>
-              <button class="checkout-button">2.Shipping</button>
-              <button class="checkout-button">3.Payment</button>
-              <a href="thankyou.html" class="checkout-button order-confirmation"
-                >4. Order confirmation</a
-              >
+              <label
+                >Full name
+                <input id="name" required />
+              </label>
+              <label
+                >Email
+                <input id="email" type="email" required />
+              </label>
+              <label
+                >Address
+                <input id="address" required />
+              </label>
+              <label
+                >City
+                <input id="city" required />
+              </label>
+              <label
+                >Postal code
+                <input id="zip" pattern="^[0-9A-Za-z -]{3,10}$" required />
+              </label>
             </div>
-          </section>
+
+            <h2>Payment</h2>
+            <div class="information-catagory">
+              <label
+                >Name on card
+                <input id="cardName" required />
+              </label>
+              <label
+                >Card number
+                <input
+                  id="cardNumber"
+                  inputmode="numeric"
+                  maxlength="19"
+                  required
+                />
+              </label>
+              <label
+                >Expiry (MM/YY)
+                <input id="expiry" placeholder="MM/YY" required />
+              </label>
+              <label
+                >CVV
+                <input id="cvv" inputmode="numeric" maxlength="4" required />
+              </label>
+            </div>
+
+            <button class="checkout-button pay-btn">Pay now</button>
+          </form>
         </div>
 
-        <div class="order-summary">
-          <h2 class="heading-summary">
-            <span>Order Summary</span>
-            <a href="product-detail.html" class="edit-button">Edit</a>
-          </h2>
+        <!-- Høyre kolonne: Order summary -->
+        <aside class="order-summary">
+          <div class="heading-summary"></div>
           <hr class="checkout-hr" />
-          <div class="order-information">
-            <img
-              src="images/Fjord-Guard.jpg"
-              alt="Fjord Guard jacket"
-              class="checkout-fjord-guard"
-            />
-
-            <div class="order-summary-info">
-              <h3>Item: Fjord Guard Jacket | Size: L</h3>
-              <h3>Qty: 1 | £110</h3>
-              <h3 class="order-summary-price">£110</h3>
-            </div>
-          </div>
-
-          <section class="summary-text-price">
-            <h4 class="promo-code">
-              Do you have a promo code?
-              <span class="summary-information">+</span>
-            </h4>
-            <hr class="checkout-hr" />
-            <div class="subtotal-shipping-information">
-              <h4>Subtotal: <span class="summary-information">£110</span></h4>
-              <h4>
-                Estimated Shipping:
-                <span class="summary-information">FREE</span>
-              </h4>
-              <hr class="checkout-hr" />
-            </div>
-            <h4 class="estimated-total">
-              Estimated Total: <span class="summary-information">£110</span>
-            </h4>
-          </section>
-        </div>
+          <div id="co-summary"></div>
+        </aside>
       </section>
     </main>
+
     <!--Footer-->
     <footer class="footer-container">
       <section class="logo-newsletter">
@@ -165,7 +149,6 @@
 
       <hr class="footer-hr" />
       <section class="footer-links">
-        <!--first column-->
         <div class="footer-text">
           <div class="customer-information">
             <h4 class="footer-headers"><strong>Customer Service:</strong></h4>
@@ -176,7 +159,7 @@
               <li>Care Instructions</li>
             </ul>
           </div>
-          <!--second column-->
+
           <div class="customer-information">
             <h4 class="footer-headers"><strong>About Us:</strong></h4>
             <ul>
@@ -186,12 +169,12 @@
               <li>Product Reviews</li>
             </ul>
           </div>
-          <!--third column-->
+
           <section class="social-media-footer">
             <div class="customer-information">
               <h4 class="footer-headers"><strong>Available On:</strong></h4>
               <!-- <img src="images/appstore.png" alt="App Store" />
-              <img src="images/googleplay.png" alt="Google Play" />
+              <img src="images/googleplay.png" alt="Google Play" /> -->
             </div>
             <div>
               <h4 class="customer-information">Follow Us:</h4>
@@ -201,36 +184,33 @@
                   target="_blank"
                   aria-label="YouTube"
                 >
-                  <img src="images/youtube.svg" alt="YouTube"
-                /></a>
-
+                  <img src="images/youtube.svg" alt="YouTube" />
+                </a>
                 <a
                   href="https://www.facebook.com"
                   target="_blank"
                   aria-label="Facebook"
                 >
-                  <img src="images/facebook.svg" alt="Facebook"
-                /></a>
-
+                  <img src="images/facebook.svg" alt="Facebook" />
+                </a>
                 <a
                   href="https://www.instagram.com"
                   target="_blank"
                   aria-label="Instagram"
                 >
-                  <img src="images/instagram.svg" alt="Instagram"
-                /></a>
-
+                  <img src="images/instagram.svg" alt="Instagram" />
+                </a>
                 <a
                   href="https://www.linkedin.com"
                   target="_blank"
                   aria-label="LinkedIn"
                 >
-                  <img src="images/linkedin.svg" alt="LinkedIn"
-                /></a>
+                  <img src="images/linkedin.svg" alt="LinkedIn" />
+                </a>
               </div>
             </div>
           </section>
-        </div> -->
+        </div>
         <hr class="footer-hr footer-bottom" />
         <p class="footer-copy">
           copyright &copy; Rainy Days 2025. All rights reserved.
