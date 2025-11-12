@@ -248,8 +248,8 @@ p.welcome_subtext {
 
 .product img {
   width: 100%;
-  height: 260px;           /* hindrer at bildet blir kjempestort */
-  object-fit: cover;       /* cropp pent */
+  height: 260px;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
 }
@@ -284,6 +284,7 @@ p.welcome_subtext {
   .products { grid-template-columns: 1fr; }
 }
 
+/* Size-knapper */
 .size-buttons {
   display: flex;
   gap: 8px;
@@ -300,7 +301,8 @@ p.welcome_subtext {
   cursor: pointer;
 }
 
-.size:hover { background: #f2f6f8; }
+.size:hover { background: #002d45;
+color: #fff; }
 
 .size.is-off,
 .size:disabled {

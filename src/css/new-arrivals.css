@@ -42,7 +42,7 @@
   text-decoration: underline;
 }
 
-/* Size-knapper – samme stil som forsiden */
+/* Size-knapper */
 .size-buttons {
   display: flex;
   flex-wrap: wrap;

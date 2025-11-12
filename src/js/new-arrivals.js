@@ -18,10 +18,12 @@ async function init() {
 }
 
 function cardHTML(p) {
-  const img =
-    p.image?.url || p.images?.[0]?.url || 'images/placeholder.jpg';
+  const img = p.image?.url || p.images?.[0]?.url || 'images/placeholder.jpg';
   const price = p.discountedPrice ?? p.price ?? '';
   const title = p.title || 'Product';
+
+  // ← SAME availability as Product Detail (based on product id)
+  const sizes = makeSizes(p.id);
 
   return `
     <div class="product product-info">
@@ -30,9 +32,46 @@ function cardHTML(p) {
       </a>
       <p class="title">${title} <span class="price">£${price}</span></p>
       <p class="sizes-label">Sizes available:</p>
-      <div class="size-buttons">
-        ${['XS','S','M','L','XL'].map(s=>`<button class="size">${s}</button>`).join('')}
-      </div>
+      ${sizeButtonsHTML(sizes)}
     </div>
   `;
+}
+
+/* ---------- SAME helpers as Product Detail ---------- */
+function makeSizes(seed) {
+  const list = ['XS', 'S', 'M', 'L', 'XL'];
+  const offIndex = Math.abs(hash(String(seed))) % list.length;
+  const defaultIndex = (offIndex + 3) % list.length; // just for consistent "selected"
+  return list.map((label, i) => ({
+    label,
+    off: i === offIndex,
+    selected: i === defaultIndex,
+  }));
+}
+
+function sizeButtonsHTML(sizes) {
+  // Non-interactive on the cards (we only show availability)
+  return `
+    <div class="size-buttons">
+      ${sizes
+        .map(
+          (s) => `
+        <button
+          class="size${s.selected ? ' is-selected' : ''}${s.off ? ' is-off' : ''}"
+          ${s.off ? 'disabled' : ''}
+          tabindex="-1"
+          aria-disabled="true">
+          ${s.label}
+        </button>
+      `
+        )
+        .join('')}
+    </div>
+  `;
+}
+
+function hash(s = 'x') {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return h;
 }

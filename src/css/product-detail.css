@@ -88,6 +88,11 @@
   color: #fff;
 }
 
+.size.is-selected {
+  background: #0a2c3d;
+  color: #fff;
+}
+
 .size.is-off {
   opacity: 0.45;
   text-decoration: line-through;

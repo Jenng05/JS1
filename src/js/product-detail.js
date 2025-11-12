@@ -24,7 +24,7 @@ if (!id) {
 }
 
 function renderDetail(p) {
-  // Bilde
+  // Image
   const imgEl = document.querySelector('.product-image img, #pd-img');
   const img = p.image?.url || p.images?.[0]?.url || 'images/placeholder.jpg';
   if (imgEl) {
@@ -32,38 +32,41 @@ function renderDetail(p) {
     imgEl.alt = p.title || 'Product';
   }
 
-  // Tittel + pris
+  // Title + price
   const titleEl = document.querySelector('.product-title, #pd-title');
   if (titleEl) titleEl.textContent = p.title || 'Product';
 
   const priceEl = document.querySelector('.highlight_price, #pd-price');
   if (priceEl) priceEl.textContent = `£${p.discountedPrice ?? p.price ?? ''}`;
 
-  // Valgfritt: beskrivelse
+  // Description (optional)
   const descEl = document.querySelector('#pd-desc');
   if (descEl) descEl.textContent = p.description || p.descriptionShort || '';
 
-  // Størrelser
+  // Sizes (med default valgt + klikkliseners)
   const sizesWrap = document.querySelector('#pd-sizes');
   if (sizesWrap) {
-    const sizes = makeSizes(id);             // “fake availability” – stabil ut fra id
+    const sizes = makeSizes(id); // lager «fake» availability deterministisk fra id
     sizesWrap.innerHTML = sizeButtonsHTML(sizes);
 
-    // Oppdater add-to-cart første gang (med default valgt)
-    updateAddToCartHref();
-
-    // Klikk: bytt valgt knapp og oppdater add-to-cart
     sizesWrap.addEventListener('click', (e) => {
       const btn = e.target.closest('button.size');
       if (!btn || btn.disabled) return;
-      sizesWrap.querySelectorAll('.size.is-selected').forEach(b => b.classList.remove('is-selected'));
+
+      // Fjern gammel selection
+      sizesWrap.querySelectorAll('.size.is-selected')
+        .forEach(b => b.classList.remove('is-selected'));
+
+      // Marker ny
       btn.classList.add('is-selected');
+
+      // Oppdater Add-to-Cart-lenke med valgt størrelse
       updateAddToCartHref();
     });
-  } else {
-    // finnes ingen #pd-sizes → sørg likevel for id i Add-to-Cart
-    updateAddToCartHref();
   }
+
+  // Sørg for at Add-to-Cart alltid har id + (ev. size)
+  updateAddToCartHref();
 
   function updateAddToCartHref() {
     const add = document.querySelector('#pd-add');
@@ -76,6 +79,7 @@ function renderDetail(p) {
 
 /* ---------- helpers ---------- */
 function makeSizes(seed) {
+  // Grunnliste; én blir «off», en annen blir valgt som default
   const list = ['XS','S','M','L','XL'];
   const offIndex = Math.abs(hash(seed)) % list.length;
   const defaultIndex = (offIndex + 3) % list.length;
@@ -85,12 +89,16 @@ function makeSizes(seed) {
     selected: i === defaultIndex
   }));
 }
+
 function sizeButtonsHTML(sizes) {
   return sizes.map(s => `
-    <button class="size${s.selected ? ' is-selected' : ''}${s.off ? ' is-off' : ''}"
-            ${s.off ? 'disabled' : ''}>
+    <button
+      class="size${s.selected ? ' is-selected' : ''}${s.off ? ' is-off' : ''}"
+      ${s.off ? 'disabled' : ''}>
       ${s.label}
     </button>
   `).join('');
 }
+
+// enkel, stabil hash for id -> tall
 function hash(s='x'){ let h=0; for (let i=0;i<s.length;i++) h = (h*31 + s.charCodeAt(i))|0; return h; }
