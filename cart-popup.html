@@ -30,16 +30,19 @@
   </head>
 
   <body class="popup-background">
-    <main>
-      <section class="cart-popup">
-        <h1>Added to cart</h1>
-        <div id="cart-summary">Loading…</div>
+    <main class="cart-popup">
+      <h2>Added to cart</h2>
+      <div id="cp-product">
+        <img id="cp-img" src="" alt="" />
+        <h2 id="cp-title"></h2>
+        <p id="cp-price"></p>
+        <p id="cp-size"></p>
+
         <div class="actions">
-          <a class="cta" href="new-arrivals.html">Continue shopping</a>
-          <a class="cta" href="checkout.html">Go to checkout</a>
+          <a href="checkout.html" class="btn">Go to checkout</a>
+          <a href="new-arrivals.html" class="btn btn-alt">Continue shopping</a>
         </div>
-      </section>
-      <script type="module" src="src/js/cart-popup.js"></script>
+      </div>
     </main>
   </body>
 </html>
