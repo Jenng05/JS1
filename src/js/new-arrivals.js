@@ -8,13 +8,16 @@ init();
 
 async function init() {
   if (!container) return;
+
+  // 👇 Loading-tekst mens vi venter på API
+  container.innerHTML = '<p class="loading">Loading products…</p>';
+
   try {
-    container.innerHTML = '<p>Loading…</p>';
     const products = await fetchProducts();
     container.innerHTML = products.map(cardHTML).join('');
   } catch (err) {
     console.error(err);
-    container.innerHTML = '<p>Kunne ikke laste produkter.</p>';
+    container.innerHTML = '<p>Could not load products. Please try again.</p>';
   }
 }
 

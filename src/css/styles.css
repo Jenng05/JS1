@@ -312,6 +312,12 @@ color: #fff; }
 }
 
 
+.loading {
+  font-style: italic;
+  color: #555;
+  margin: 1rem 0;
+}
+
 
 /*Footer*/
 

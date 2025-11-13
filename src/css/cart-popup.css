@@ -123,3 +123,43 @@ body.popup-background {
 .btn-outline:hover {
   background: rgba(10, 44, 61, 0.06);
 }
+
+.cart-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cart-btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+/* Primærknapp – Go to Payment */
+.cart-btn-primary {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 2px solid var(--main-color);
+}
+
+.cart-btn-primary:hover {
+  background-color: #1a5b7e;
+}
+
+/* Sekundærknapp – Continue shopping */
+.cart-btn-secondary {
+  background-color: #fff;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+}
+
+.cart-btn-secondary:hover {
+  background-color: #f3f8fb;
+}

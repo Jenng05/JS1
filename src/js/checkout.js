@@ -12,9 +12,15 @@ init();
 
 async function init() {
   if (!id) {
-    if (summary) summary.innerHTML = '<p>Mangler produkt. Gå tilbake og velg igjen.</p>';
+    if (summary) summary.innerHTML = '<p>No product in checkout. Go back and add one.</p>';
     return;
   }
+
+    if (summary) {
+    summary.innerHTML = '<p class="loading">Loading order summary…</p>';
+  }
+
+
   try {
     const p = await fetchProductById(id);
     renderSummary(p, size);
@@ -22,7 +28,7 @@ async function init() {
     wireFormatting();
   } catch (e) {
     console.error(e);
-    if (summary) summary.innerHTML = '<p>Kunne ikke laste produkt.</p>';
+    if (summary) summary.innerHTML = '<p>Could not load product..</p>';
   }
 }
 
