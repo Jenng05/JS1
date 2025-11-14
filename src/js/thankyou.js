@@ -1,37 +1,52 @@
 // src/js/thankyou.js
 import { fetchProductById } from './api.js';
 
-const q = new URLSearchParams(location.search);
-const order = q.get('order');
-const id = q.get('id');
-const size = q.get('size') || '';
+const params = new URLSearchParams(location.search);
+const id = params.get('id');      // produkt-id fra checkout
+const order = params.get('order'); // ordrenummer
+const size = params.get('size') || '';
 
-const root = document.querySelector('.thankyou-summary');
+const root = document.getElementById('ty-root');
 
-(async () => {
-  if (!order) {
-    root.innerHTML = '<p>Mangler ordrenummer.</p>';
-    return;
-  }
-  let product = null;
-  if (id) {
-    try { product = await fetchProductById(id); } catch {}
-  }
-  const img = product?.image?.url || product?.images?.[0]?.url || 'images/placeholder.jpg';
-  const title = product?.title || 'Product';
-  const price = product?.discountedPrice ?? product?.price ?? '';
+// Hvis vi ikke finner root, avslutt stille så vi slipper feil i konsollen
+if (!root) {
+  console.warn('Fant ikke #ty-root på thankyou.html');
+} else {
+  (async () => {
+    try {
+      let product = null;
 
-  root.innerHTML = `
-    <h1>Thank you!</h1>
-    <p>Order number: <strong>${order}</strong></p>
-    <div class="ty-card">
-      <img src="${img}" alt="${title}">
-      <div>
-        <h3>${title}</h3>
-        ${price !== '' ? `<p>Price: £${price}</p>` : ''}
-        ${size ? `<p>Size: ${size}</p>` : ''}
-        <a class="cta" href="index.html">Continue shopping</a>
-      </div>
-    </div>
-  `;
-})();
+      if (id) {
+        // hent produktet slik at vi kan vise navn/bilde osv
+        product = await fetchProductById(id);
+      }
+
+      const title = product?.title || 'your item';
+      const img =
+        product?.image?.url || product?.images?.[0]?.url || 'images/placeholder.jpg';
+
+      root.innerHTML = `
+        <div class="thankyou-wrapper">
+          <h1>Thank you for your order!</h1>
+
+          ${order ? `<p>Your order number is <strong>${order}</strong>.</p>` : ''}
+
+          <div class="thankyou-product">
+            <img src="${img}" alt="${title}">
+            <div>
+              <h2>${title}</h2>
+              ${size ? `<p>Size: ${size}</p>` : ''}
+            </div>
+          </div>
+
+          <p>You will receive a confirmation email shortly.</p>
+
+          <a href="index.html" class="btn btn-primary">Back to home</a>
+        </div>
+      `;
+    } catch (err) {
+      console.error(err);
+      root.innerHTML = '<p>Sorry, something went wrong loading your order.</p>';
+    }
+  })();
+}

@@ -1,21 +1,42 @@
+/* --- Thank You Page Styling --- */
+
 .thank-you-container {
-display: flex;
-flex-direction: column;
-align-items: center; 
-margin-top: 120px;
-margin-bottom: 120px;
+  max-width: 700px;
+  margin: 120px auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.confirmation-text {
-display: flex;
-  flex-direction: column;
-  align-items: center;
+.thank-you-container img {
+  width: 220px;        /* 👈 mindre, fin størrelse */
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.confirmation-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.confirmation-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.order-number {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--main-color);
+  margin-bottom: 2rem;
 }
 
 .thank-you-link {
-    font-size: 20px;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  color: var(--main-color);
+  transition: 0.3s ease;
 }
 
-.Rainydays-logo {
-    color: #1b6c82
+.thank-you-link:hover {
+  color: #104559;
 }
