@@ -86,7 +86,7 @@ function wireValidation() {
 
     if (!ok) return;
 
-    // “Send” ordren → thankyou.html
+    // “Send” ordren - thankyou.html
     const orderNo = 'RD-' + Math.random().toString(36).slice(2, 8).toUpperCase();
     const params = new URLSearchParams({
       order: orderNo,

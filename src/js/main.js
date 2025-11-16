@@ -21,8 +21,8 @@ function getSizeAvailability(seedText = '') {
   // Vi markerer noen som utsolgt basert på en enkel hash
   const sizes = ['XS','S','M','L','XL'];
   const hash = [...seedText].reduce((a,c)=>a+c.charCodeAt(0),0);
-  const offIndex = hash % sizes.length;       // én tom
-  const selectedIndex = (hash + 2) % sizes.length; // én valgt
+  const offIndex = hash % sizes.length;
+  const selectedIndex = (hash + 2) % sizes.length;
   return sizes.map((s, i) => ({
     label: s,
     off: i === offIndex,

@@ -9,7 +9,7 @@ init();
 async function init() {
   if (!container) return;
 
-  // 👇 Loading-tekst mens vi venter på API
+  // Loading-tekst mens vi venter på API
   container.innerHTML = '<p class="loading">Loading products…</p>';
 
   try {
@@ -26,7 +26,7 @@ function cardHTML(p) {
   const price = p.discountedPrice ?? p.price ?? '';
   const title = p.title || 'Product';
 
-  // SAME availability as Product Detail (based on product id)
+  // samme availability som på Product Detail (based on product id)
   const sizes = makeSizes(p.id);
 
   return `
@@ -41,7 +41,7 @@ function cardHTML(p) {
   `;
 }
 
-/* ---------- Same helpers as Product Detail ---------- */
+/* ---------- samme helpers as Product Detail ---------- */
 function makeSizes(seed) {
   const list = ['XS', 'S', 'M', 'L', 'XL'];
   const offIndex = Math.abs(hash(String(seed))) % list.length;

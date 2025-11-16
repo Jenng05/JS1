@@ -31,7 +31,7 @@ function cardHTML(p) {
   `;
 }
 
-// Enkel “variasjon” i tilgjengelighet basert på id
+// variasjon i tilgjengelighet basert på id
 function sizeButtonsHTML(seed) {
   const list = ['XS','S','M','L','XL'];
   const offIndex = Math.abs(hash(seed)) % list.length;

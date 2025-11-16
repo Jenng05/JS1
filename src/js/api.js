@@ -25,7 +25,7 @@ export function findProductInCache(id) {
   return (_cache || []).find(p => p.id === id) || null;
 }
 
-/** Hent ett produkt: cache -> direkte endpoint -> fallback til å hente alle */
+/** Hent ett produkt: cache - direkte endpoint - fallback til å hente alle */
 export async function fetchProductById(id) {
   // 1) cache
   const hit = findProductInCache(id);

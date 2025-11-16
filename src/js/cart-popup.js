@@ -22,7 +22,7 @@ const root = document.querySelector(".cart-content");
   try {
     const product = await fetchProductById(id);
     if (!product) {
-      root.innerHTML = "<p>Couldn't fine product.</p>";
+      root.innerHTML = "<p>Couldn't find product.</p>";
       return;
     }
 
@@ -36,8 +36,8 @@ const root = document.querySelector(".cart-content");
     root.innerHTML = `
       <img src="${img}" alt="${title}">
       <h2>${title}</h2>
-      <p>Pris: £${price}</p>
-      ${size ? `<p>Størrelse: ${size}</p>` : ""}
+      <p>Price: £${price}</p>
+      ${size ? `<p>Size: ${size}</p>` : ""}
 
       <div class="cart-actions">
         <a class="btn btn-primary"
@@ -53,7 +53,7 @@ const root = document.querySelector(".cart-content");
       </div>
     `;
 
-    // "Fortsett å handle" tilbake til forrige side eller New Arrivals
+    // "Fortsett å handle" tilbake til forrige side
     const contBtn = document.getElementById("continue-shopping");
     if (contBtn) {
       contBtn.addEventListener("click", (e) => {
