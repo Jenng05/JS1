@@ -1,4 +1,3 @@
-// src/js/cart-popup.js
 import { fetchProductById } from "./api.js";
 
 const params = new URLSearchParams(location.search);
@@ -23,7 +22,7 @@ const root = document.querySelector(".cart-content");
   try {
     const product = await fetchProductById(id);
     if (!product) {
-      root.innerHTML = "<p>Fant ikke produkt.</p>";
+      root.innerHTML = "<p>Couldn't fine product.</p>";
       return;
     }
 
@@ -54,7 +53,7 @@ const root = document.querySelector(".cart-content");
       </div>
     `;
 
-    // "Fortsett å handle" → tilbake til forrige side eller New Arrivals
+    // "Fortsett å handle" tilbake til forrige side eller New Arrivals
     const contBtn = document.getElementById("continue-shopping");
     if (contBtn) {
       contBtn.addEventListener("click", (e) => {
@@ -68,6 +67,6 @@ const root = document.querySelector(".cart-content");
     }
   } catch (err) {
     console.error(err);
-    root.innerHTML = "<p>Kunne ikke laste produkt.</p>";
+    root.innerHTML = "<p>could not load product.</p>";
   }
 })();

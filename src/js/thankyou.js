@@ -1,9 +1,8 @@
-// src/js/thankyou.js
 import { fetchProductById } from './api.js';
 
 const params = new URLSearchParams(location.search);
-const id = params.get('id');      // produkt-id fra checkout
-const order = params.get('order'); // ordrenummer
+const id = params.get('id');
+const order = params.get('order');
 const size = params.get('size') || '';
 
 const root = document.getElementById('ty-root');

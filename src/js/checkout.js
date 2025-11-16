@@ -1,4 +1,3 @@
-// src/js/checkout.js
 import { fetchProductById } from './api.js';
 
 const q = new URLSearchParams(location.search);
@@ -28,7 +27,7 @@ async function init() {
     wireFormatting();
   } catch (e) {
     console.error(e);
-    if (summary) summary.innerHTML = '<p>Could not load product..</p>';
+    if (summary) summary.innerHTML = '<p>Could not load product.</p>';
   }
 }
 
@@ -98,7 +97,7 @@ function wireValidation() {
   });
 }
 
-/* Optional input helpers (formatting) */
+/* Optional input helpers - formatting */
 function wireFormatting() {
   const number = document.getElementById('cardNumber');
   const expiry = document.getElementById('expiry');

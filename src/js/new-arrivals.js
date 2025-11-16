@@ -26,7 +26,7 @@ function cardHTML(p) {
   const price = p.discountedPrice ?? p.price ?? '';
   const title = p.title || 'Product';
 
-  // ← SAME availability as Product Detail (based on product id)
+  // SAME availability as Product Detail (based on product id)
   const sizes = makeSizes(p.id);
 
   return `
@@ -41,11 +41,11 @@ function cardHTML(p) {
   `;
 }
 
-/* ---------- SAME helpers as Product Detail ---------- */
+/* ---------- Same helpers as Product Detail ---------- */
 function makeSizes(seed) {
   const list = ['XS', 'S', 'M', 'L', 'XL'];
   const offIndex = Math.abs(hash(String(seed))) % list.length;
-  const defaultIndex = (offIndex + 3) % list.length; // just for consistent "selected"
+  const defaultIndex = (offIndex + 3) % list.length;
   return list.map((label, i) => ({
     label,
     off: i === offIndex,
@@ -54,7 +54,7 @@ function makeSizes(seed) {
 }
 
 function sizeButtonsHTML(sizes) {
-  // Non-interactive on the cards (we only show availability)
+  // Non-interactive on the cards
   return `
     <div class="size-buttons">
       ${sizes

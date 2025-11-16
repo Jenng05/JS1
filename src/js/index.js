@@ -8,7 +8,7 @@ if (container) {
       const four = all.slice(0, 4);
       container.innerHTML = four.map(cardHTML).join('');
     } catch (e) {
-      container.innerHTML = '<p>Kunne ikke laste produkter.</p>';
+      container.innerHTML = '<p>Could not load product.</p>';
       console.error(e);
     }
   })();
@@ -17,6 +17,7 @@ if (container) {
 function cardHTML(p) {
   const img = p.image?.url || p.images?.[0]?.url || 'images/placeholder.jpg';
   const price = p.price || p.discountedPrice || '';
+
   // Link til detaljside med id i query
   return `
     <div class="product">
@@ -30,10 +31,10 @@ function cardHTML(p) {
   `;
 }
 
-// Enkel “variasjon” i tilgjengelighet basert på id (hvis API ikke har sizes)
+// Enkel “variasjon” i tilgjengelighet basert på id
 function sizeButtonsHTML(seed) {
   const list = ['XS','S','M','L','XL'];
-  const offIndex = Math.abs(hash(seed)) % list.length; // tilfeldig-ish
+  const offIndex = Math.abs(hash(seed)) % list.length;
   return `
     <div class="size-buttons">
       ${list.map((s, i) => {

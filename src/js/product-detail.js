@@ -1,4 +1,3 @@
-// src/js/product-detail.js
 import { fetchProductById } from './api.js';
 
 const params = new URLSearchParams(location.search);
@@ -26,24 +25,24 @@ async function load() {
 }
 
 function renderDetail(p) {
-  // --- IMAGE ---
+  // --- IMAGE
   const img = p.image?.url || p.images?.[0]?.url || 'images/placeholder.jpg';
   const imgEl = document.querySelector('#pd-img');
   imgEl.src = img;
   imgEl.alt = p.title;
 
-  // --- TITLE + PRICE ---
+  // --- TITLE + PRICE
   document.querySelector('#pd-title').textContent = p.title;
   document.querySelector('#pd-price').textContent =
     `£${p.discountedPrice ?? p.price}`;
 
-  // --- DESCRIPTION ---
+  // --- DESCRIPTION
   const descEl = document.querySelector('#pd-desc');
   if (descEl) descEl.textContent = p.description || '';
 
-  // --- SIZES ---
+  // --- SIZES
   const sizesWrap = document.querySelector('#pd-sizes');
-  const sizes = makeSizes(id); // SAME availability as New Arrivals
+  const sizes = makeSizes(id); // Samme availability as new arrival
   sizesWrap.innerHTML = sizeButtonsHTML(sizes);
 
   // add click behavior

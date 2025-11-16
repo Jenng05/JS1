@@ -31,9 +31,9 @@ export async function fetchProductById(id) {
   const hit = findProductInCache(id);
   if (hit) return hit;
 
-  // 2) direkte endpoint (billig hvis backend støtter det)
+  // 2) direkte endpoint
   try {
-    const res = await fetch(`${API_URL}/${encodeURIComponent(id)}`, options);
+    const res = await fetch(`${API_URL} ${encodeURIComponent(id)}`, options);
     if (res.ok) {
       const json = await res.json();
       const p = json?.data ?? null;
