@@ -17,3 +17,4 @@ An enhanced version of the Rainy Days e-commerce website, extended with Vanilla 
 ## Live Demo
 [View Live Site] - https://jenng05.github.io/JS1/
 
+git clone: https://github.com/Jenng05/JS1.git
