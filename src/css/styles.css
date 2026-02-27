@@ -99,7 +99,7 @@ img.enlarged {
 
 /* Hero section background */
 .welcome {
-  background-image: url("/images/welcome.jpg");
+  background-image: url("../../images/welcome.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
