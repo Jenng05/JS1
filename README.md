@@ -18,3 +18,9 @@ An enhanced version of the Rainy Days e-commerce website, extended with Vanilla 
 [View Live Site] - https://jenng05.github.io/JS1/
 
 git clone: https://github.com/Jenng05/JS1.git
+
+## Improvements
+- Refactored cart popup script into smaller helper functions
+- Improved code readability and structure
+- Added safer event handling using optional chaining
+- Cleaned up conditional logic for better maintainability
