@@ -24,3 +24,5 @@ git clone: https://github.com/Jenng05/JS1.git
 - Improved code readability and structure
 - Added safer event handling using optional chaining
 - Cleaned up conditional logic for better maintainability
+- Fixed hero background image path for GitHub Pages deployment
+- Improved stability of CSS loading
